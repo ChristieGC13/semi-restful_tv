@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Read (All)</title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="mb-3 d-flex justify-content-end">
+    <a href="/">Go Back</a>
+</div>
+<div class="card w-75">
+    <div class="card-body">
+        <h1 class="card-title"> TV Show {{ show.id }}</h1>
+        <h5 class="card-text">Title: {{ show.title }}</h5>
+        <h5 class="card-text">Network: {{ show.network }}</h5>
+        <h5 class="card-text">Release Date: {{ show.release_date }}</h5>
+        <h5 class="card-text">Description: {{ show.desc }}</h5>
+    </div>
+</div>
+<div class="mt-5">
+    <h5>Last Updated: {{ show.updated_at }}</h5>
+    <a href="/edit_show">Edit</a> | <a href="/delete/{{ show.id }}">Delete</a>
+</div>
+
+{% endblock content%}
